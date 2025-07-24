@@ -16,7 +16,6 @@ A simple and intuitive web-based To-Do List app to help you stay organized and p
 
 ## 📸 Preview
 - This project was built as a capstone project for CS50x : Introduction to Computer Science by Harvard University.
-- 🎥 [Watch Demo on YouTube](https://youtu.be/YthW44izFlo)
 
 
 ## 📂 How to Run
