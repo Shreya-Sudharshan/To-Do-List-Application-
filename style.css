@@ -1,0 +1,290 @@
+*{
+    margin : 0;
+    padding: 0;
+    font-family : 'Poppins', sans-serif;
+    box-sizing : border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: grey;
+    padding : 10px;
+}
+.todo-app{
+    width :100%;
+    max-width : 540px;
+    background: #fff;
+    margin : 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius : 10px;
+
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom : 20px;
+
+}
+.todo-app h2 img{
+    width : 30px;
+    margin-left: 10px;
+
+
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+
+}
+button{
+    border: none;
+    outline: none;
+    padding : 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position : relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius : 50%;
+    background-image: url(images/unchecked.png);
+    background-size: contain;
+    background-position:center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png)
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+  
+}
+/* DARK MODE */
+body.dark {
+    background-color: #1e1e1e;
+    color: #ffb6c1; /* Light pink */
+}
+
+body.dark .todo-app {
+    background-color: #2e2e2e;
+}
+
+body.dark .row {
+    background-color: #444;
+}
+
+body.dark button {
+    background-color: #888;
+    color: #ffb6c1;
+}
+
+body.dark ul li {
+    color: #ffb6c1;
+}
+
+/* PRIORITY TAGS (Updated style) */
+.priority {
+    margin-left: 12px;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 14px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.priority.low {
+    background-color: #c8e6c9;
+    color: #256029;
+}
+
+.priority.medium {
+    background-color: #ffe0b2;
+    color: #8a4b00;
+}
+
+.priority.high {
+    background-color: #ffcdd2;
+    color: #b71c1c;
+}
+
+/* PROGRESS BAR */
+#progress-bar-container {
+    margin-top: 20px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+}
+
+/* Input row adjustment */
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Ensure priority label fits properly */
+.priority {
+    white-space: nowrap;
+    padding: 3px 10px;
+    font-size: 11px;
+    border-radius: 14px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #333;
+    text-transform: uppercase;
+    display: inline-block;
+    max-width: fit-content;
+}
+
+/* Dark mode toggle styling (right aligned within flex) */
+#dark-mode-toggle {
+    background: none;
+    border: 1px solid #aaa;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+/* Header styling update */
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+body.dark .todo-app h2 {
+    color: #ffb6c1;
+}
+
+/* Container size */
+.todo-app {
+    width: 90%;
+    max-width: 700px;
+    background: #fff;
+    margin: 80px auto;
+    padding: 50px 40px 70px;
+    border-radius: 12px;
+}
+
+/* Button and row layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Priority label inline fix */
+ul li .priority {
+    margin-left: 10px;
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Ensure toggle sits next to header */
+#dark-mode-toggle {
+    margin: 0;
+    margin-left: 10px;
+    background: none;
+    border: 1px solid #aaa;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    height: 32px;
+}
+
+/* PRIORITY TAGS FINAL STYLING */
+.priority {
+    margin-left: 12px;
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Individual colors */
+.priority.low {
+    background-color: #c8e6c9;
+    color: #256029;
+}
+
+.priority.medium {
+    background-color: #ffe0b2;
+    color: #8a4b00;
+}
+
+.priority.high {
+    background-color: #ffcdd2;
+    color: #b71c1c;
+}
